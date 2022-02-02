@@ -19,40 +19,55 @@
          </main>
      
          <br>
-         <section>        
-                 <div class="operation">
-                 <h3>Recent Operations</h3>
-                 <br>
-                 <div class="recent-Operations">                
-                         <h2>Name Operation 1</h2>                    
-                         <h4><span>-</span> 100.00</h4>
-                         <h5>21 set 2021</h5>
-                                                                                                         
-                 </div>
-                 <br>
-                 <div class="recent-Operations">                                
-                     <h2>Name Operation 2</h2>                    
-                     <h4><span>-</span> 150.00</h4>
-                     <h5>21 oct 2021</h5>                                                                                                     
-                 </div>   
-                 <br>
-                 <div class="recent-Operations">                                
-                     <h2>Name Operation 3</h2>                    
-                     <h4><span>-</span> 110.00</h4>
-                     <h5>11 dec 2021</h5>                                                                                                     
-                 </div>                                                                                                     
-                 </div>
-                 <!--<button class="btn"><ion-icon name="chevron-down-sharp" style="font-size: 30px; margin: auto; margin-top: 1px; transition: 0.5s;"></ion-icon></button>-->
-     
-                 <button class="btn-t four"><span style="color:#000">New Transfer</span></button>
+        <section> 
+            <div class="title-h3">
+                 <h3 style="text-align: center; margin-top: -0.5em; font-size:30px; margin: 30px;">Recent Operations</h3>   
+            </div>
+                
+                 <div class="opera">
+                 <div class="operation-style">
+                 
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th id="type" scope="col">Type</th>
+                            <th id="date" scope="col">Date</th>
+                            <th id="amount" scope="col">Amount</th>
+                            
+                           
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr th:each="transactions:${transactions}">                           
+                              <td id="type"th:text="${transactions.type}"></td>                     
+                              <td id="date" th:text="${transactions.dateTransaction}"></td>                    
+                              <td id="amount" th:text="${transactions.amount}"><span id="span-amount"></span></td>                                                                        
+                          </tr>
+                         
+                        </tbody>
+                      </table>             
+                                   
+               
+              
+                 </div>                                                                                                                      
+                </div>
+            <div class="btn-button">
+                 <button id="button" type="button" class="btn" ><ion-icon name="chevron-down-sharp" id="arrow" style="font-size: 30px; margin: auto; margin-top: 1px; transition: 0.5s;"></ion-icon></button>
+            </div>
+                
+                <div class="btn-special">
+                    <button  class="btn-t four"><span style="color:#000"><a th:href="@{/transactions/new}">New Transfer<a/></span></button>
+                </div>
          </section>
         </div>
          <br>
          
     </div>
        
+    <!--Footer-->
     <footer th:replace="/fragments/footer :: footer"></footer>
-   
+     <script src="/js/script.js"></script>
+
     <script th:replace="/fragments/script :: script"></script>
     
 </body>

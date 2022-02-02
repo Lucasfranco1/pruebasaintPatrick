@@ -1,5 +1,6 @@
 package com.banco.Saint_Patrik.Controller;
 
+import com.banco.Saint_Patrik.Entities.Card;
 import com.banco.Saint_Patrik.Entities.Transaction;
 import com.banco.Saint_Patrik.Entities.User;
 import com.banco.Saint_Patrik.Errors.ServiceError;
@@ -65,14 +66,14 @@ public class CardController {
     @GetMapping("/transactions")
     public String cardTransactions(HttpSession session, ModelMap model, @RequestParam(required = false) String cardId) throws ServiceError {
 
-        User login = (User) session.getAttribute("usersession"); //con esto si el id de login logueado viene nulo, no ejecuta el metodo
+        Card login = (Card) session.getAttribute("cardSession"); //con esto si el id de login logueado viene nulo, no ejecuta el metodo
         if (login == null) {
             return "redirect:/login";
         }
-        List<Transaction> allTransactions = cardService.searchAllTransactions(cardId);
+        List<Transaction> allTransactions = cardService.searchAllTransactions(login.getId());
         model.addAttribute("transactions", allTransactions);
 
-        return "html";
+        return "index.html";
     }
 
     /**

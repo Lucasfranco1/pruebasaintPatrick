@@ -1,159 +1,156 @@
-:root{
-    --yellow: #f0c44e;
-    --blue-green-dark: #095757;
-    --nav:#e9f5f5;
-    --blue-green:#72ada0;
-    --light-blue:#78b4b6;
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background: #fff;
-    font-family: 'Roboto';
-
-}
-.container{
-    width: 95%;
-    margin: auto;
-   
-}
-
-
-
-header{
-    padding: 30px 0;
-    background: var(--nav);
-    
-}
-
-
-header .container{
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;   
-}
-header .container img{
-    margin-left: 3.33em;
-	width: 50px;
-	height: 50px;
-    margin-top: 5px;
-    display: flex; 
-	justify-content: flex-start;
-    flex-direction: column;
-
-}
-header .container h2{
-    margin-right: 500px;
-    font-weight:bold;
-}
-
-header .logo{
-    
-    font-weight: normal; 
-    color: #000;
-    font-size: 40px;
-
-}
-
-header .navar a{    
-    letter-spacing: 5px;         
-    margin-bottom: 20px;
-}
-
-header .navar a{    
-    
-    font-size: 20px;
-    margin-right: 75px;
-    margin-left: -50px;    
-    color: #aaa;
-    text-decoration: none;   
-    
-}
-
-
-header nav a:hover,
-header nav a.active{
-    
-    color:#000;    
-    background-color: #f0c44e;
-}
-
 
 
 
 /* Operations */
 
 
-.section{
-    width: 90%;
-    margin: auto;
-}
+
 .border-container{
     display: flex;
     justify-content: center;  
-    align-items: left; 
+    align-items: center; 
     text-align: center;
     flex-direction: column;
 }
-section .operation{
+section .opera{
     display: flex;
     justify-content: left;
     align-items: left;   
     text-align:left;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 20px 0 30px;
     margin: 0px;
     margin-left: 50px;  
     background: #fff;
-    margin-left: 90px;
+    margin-left: 40px;
     margin-right: 100px;
     border-top: 1px solid var(--blue-green-dark);
     border-right: 1px solid var(--blue-green-dark);
     border-bottom: 1px solid var(--blue-green-dark);
     border-left: 1px solid var(--blue-green-dark);
     border-radius: 23px;
-    
+
 }
 
-.operation h3{
+.opera h3{
     text-align: center;
     display: flex;
     justify-content: center;
     font-weight: 500;
     font-size: 30px;
 }
-.operation h2{
+.opera h2{
     text-align: left;
     margin-left: 50px;  
-  
+    /*  display: flex;
+      justify-content: center; */ 
+
+}
 
 .transfer-Operations {
     display: flex;
-    justify-content: center;
-    align-items: center;   
+    justify-content: space-around;
+    align-items: ;   
     text-align: center;
     flex-direction: column;
     font-size: 18px;    
     font-weight: 400;
     color: #000;
 }
+
+.select-card-master{
+    display: flex;
+    justify-content: space-around;
+    margin-left: -600px;
+}
+.select-card-one {
+    margin-left: 600px;
+    margin-top: -62px;
+}
+.select-card-two {
+    margin-left: 200px;
+    margin-top: -60px;
+}
+#option{
+    font-size: 30px;
+    font-weight: 400;
+    color: #095757;
+}
+
+.amount-usd{
+    margin-left: 350px;
+}
+.comment-add{
+    margin-top: -70px;
+    margin-left: 150px;
+}
+.wrapper{    
+    width: 450px; 
+    padding: 30px;
+
+}
+.wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+.wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 35px;
+    font-family: Roboto;
+    border-bottom: 2px solid silver;
+}
+.wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.8s ease;
+
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+    transform: translateY(-30px);
+    font-size: 15px;
+    color: #095757;
+}
+
+.wrapper .input-data .underline{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    /* background: #4158d0; */
+}
+.input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #f0c44e;
+    transform: scaleX(0);
+    transition:  0.9s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+}
+
 .form-control{
     margin-left: 50px;  
     font-size: 32px;  
 }
-.usd{
+.usd{    
     font-size: 32px;  
 }
 .comment{
     text-align: left;
-    margin: left 0;
-    font-size: 18px;
+    margin-left: 50px
+        font-size: 18px;
 }
 
 .select-card{
@@ -168,352 +165,310 @@ section .operation{
 
 /* Btn */
 
-section .btn{
+section .btn-confirm{
     display: flex;
-	align-items: center; 
+    align-items: center; 
     justify-content: center; 
-	margin-top: 2em;
-	margin-left: 35.5em;
-	width: 27%;
-	height: 50px;
-	background: #000;
-	color: #000;
-	
-	font-size: 20px;
-	font-weight: 18.75em;
-	border: none;
-	cursor: pointer;
-	text-transform: uppercase;
-    transition: .5s ease all;
-	border-radius: 5px;
-	position: relative; 
-	overflow: hidden; 
-	background-color: #f0c44e;
-    
+    margin-left: -26em;
+    position: absolute;
+    margin-top: 440px;
+    width: 50%;
+
 }
 
-section .btn:hover{
-    color: #000;
-    filter: drop-shadow(0 0 5px var(--yellow)) drop-shadow(0 0 15px var(--yellow));
+section h3{
+    padding: -10px;
+    margin: 14px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #095757;
 }
-section .btn ico-icon{
+
+section .btn-b{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20em;
+    margin-left: 45.5em;	
+    height: 50px;
+    background: #000;
+    color: #fff;;
+
+    font-size: 10px;
+    font-weight: 16.75em;
+    border: none;
+    cursor: pointer;
+
+    transition: .5s ease all;
+    border-radius: 5px;
+    position: relative; 	 
+    background-color: #f0c44e;
+
+}
+
+section .btn-b:hover{
+    color: #fff;
+
+}
+section .btn-b ico-icon{
     --ionicon-stroke-width: 50px;
 
 }
 
 
-/* Footer */
-
-footer{
-    
-    padding: 30px 0;
-    background: var(--yellow);
-    
-   
-	
-}
-footer .footer_logo{
-    display: flex;
-    justify-content: flex-start; 
-     
-}
-footer img{
-    
-    margin-left: 5.5em;
-	width: 50px;
-	height: 50px;
-    margin-top: 5px;           
-    
-}
-
-footer .footer_logo h3{
-    margin-top: 20px;
-    text-align: initial;   
-    font-weight: 400;
-    margin-left: 560px;
-    font-size: 18px;
-
-}
-
-.super-container{
-    display: flex;
-	 /*align-items: center;  */
-    flex-direction: column;
-   justify-content: center;
-    min-height: calc(100vh - 275px);
-
-}
 
 
 
 
 
 /* Media Queries */
-@media screen and (max-width: 1420px){
-    
-    header .logo{
-        margin-bottom: 10px;
+@media screen and (max-width: 1029px){
+    .border-container{
+        display: flex;
+        justify-content: center;  
+        align-items: center; 
+        text-align: center;
+        flex-direction: column;
+    }
+    section .opera{
+        display: flex;
+        justify-content: left;
+        align-items: left;   
+        text-align:left;
+        flex-direction: column;
+        padding: 30px 0;
+        margin: 0px;
+        margin-left: 50px;  
+        background: #fff;
+        margin-left: 90px;
+        margin-right: 100px;
+        border-top: 1px solid var(--blue-green-dark);
+        border-right: 1px solid var(--blue-green-dark);
+        border-bottom: 1px solid var(--blue-green-dark);
+        border-left: 1px solid var(--blue-green-dark);
+        border-radius: 23px;
+
+    }
+
+    .opera h3{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
         font-size: 30px;
     }
+    .opera h2{
+        text-align: left;
+        margin-left: 50px;  
+        /*  display: flex;
+          justify-content: center; */ 
 
-    header .container {
-        flex-direction: column;
-        text-align: center;
-       
     }
-    header .container h2{
-        margin-top:15px;
-        margin-right: 5px;
-        font-weight:700;
+
+    .transfer-Operations {
+
+        align-items: ;   
+        text-align: center;    
+        font-size: 18px;    
+        font-weight: 400;
+        color: #000;
     }
-    header .navar{
-        margin-top: 20px;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        align-content: center;
+
+    .select-card-master{
+
+        margin-left: -500px;
+    }
+    .select-card-one {
+        margin-left: 450px;
+        margin-top: -62px;
+    }
+    .select-card-two {
+        margin-left: -100px;
+        margin-top: -60px;
+    }
+    #option{
+        font-size: 30px;
+        font-weight: 400;
+        color: #095757;
+    }
+
+    .amount-usd{
+        margin-left: 350px;
+    }
+    .comment-add{
+        margin-top: -70px;
         margin-left: 150px;
     }
+    .wrapper{    
+        width: 350px; 
+        padding: 30px;
 
-    section .btn{
-        margin-left: 50%;
     }
-
-    section .btn{
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 2em;
-        margin-left: 38%;
-        width: 27%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
+    .wrapper .input-data{
+        height: 40px;
+        width: 100%;
+        position: relative;
+    }
+    .wrapper .input-data input{
+        height: 100%;
+        width: 100%;
         border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
+        font-size: 17px;
+        border-bottom: 2px solid silver;
     }
-    
-    footer .footer_logo h3{
-        margin-top: 20px;
-        text-align: initial;   
-        font-weight: 400;
-        margin-left: 50%;
-        font-size: 18px;
-    
+
+  
+
+    #btnsubmit{
+        width: 800px;
     }
-   
-    
-    
-   
+
+
+
+
 }
 
 @media screen and (max-width: 900px){
-    section .btn{
-        margin-left: 50%;
-    }
-    footer .footer_logo h3{
-        margin-top: 20px;
-        text-align: initial;   
-        font-weight: 400;
-        margin-left: 160px;
-        font-size: 18px;
-    
 
+    #btnsubmit{
+        width: 500px;
+        font-size: 12px;
     }
-    section .btn{
-        margin-left: 50%;
+    .wrapper{    
+        width: 250px; 
+        padding: 30px;
+        margin-left: -300px;
     }
 
-    section .btn{
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 2em;
-        margin-left: 48%;
-        width: 27%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
+}
+
+@media screen and (max-width: 858px){
+
+    .wrapper{    
+        width: 250px; 
+        padding: 20px;
+        margin-left: -300px;
+
+    }
+
+    #btnsubmit{
+        width: 300px;
     }
 }
 
-@media screen and (max-width: 880px){
-     section .btn{
-        margin-left: 50%;
+@media screen and (max-width: 861px){
+    .wrapper{    
+        width: 250px; 
+        padding: 30px;
+        margin-left: -300px;
+
     }
 
-    section .btn{
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 2em;
-        margin-left: 16.5em;
-        width: 27%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
-    }
-    
 }
-
 
 @media screen and (max-width: 630px){
-    
-    header .navar{
-        margin-top: 20px;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        margin-right: -80px;
-        margin-left: 50px;
-    }
-    section .btn{
-        margin-left: 50%;
-    }
-    section .btn{
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 2em;
-        margin-left: 8.5em;
-        width: 27%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
-    }
-   }
-@media screen and (max-width: 751px){
- section .btn{
-    margin-left: 50%;
-     
-    }
- main .balance{
-     flex-direction: column;
- }
- section .operation h3{
-     margin-right: 60px;
-     flex-direction: column;
- }
- 
+    .select-card-master{
 
-section .btn{
+        margin-left: -600px;
+    }
+    .select-card-one {
+        margin-left: 550px;
+        margin-top: -62px;
+    }
+    .select-card-two {
+        margin-left: -730px;
+        margin-top: 20px;
+    }
+    #option{
+        font-size: 16px;
+        font-weight: 400;
+        color: #095757;
+    }
+
+  section .opera{
+     display: flex;
+    justify-content: left;
+    align-items: left;   
+    text-align:left;
+    flex-direction: column;
+    padding: 30px 0;
+    margin: 0px;
+    margin-left: 0px;  
+    background: #fff;
+    margin-left: -40px;
+    margin-right: 100px;
+    border-top: 1px solid var(--blue-green-dark);
+    border-right: 1px solid var(--blue-green-dark);
+    border-bottom: 1px solid var(--blue-green-dark);
+    border-left: 1px solid var(--blue-green-dark);
+    border-radius: 23px;
+
+}
+}
+@media screen and (max-width: 763px){
+
+.select-card-master{
+
+        margin-left: -600px;
+    }
+    .select-card-one {
+        margin-left: 550px;
+        margin-top: -62px;
+    }
+    .select-card-two {
+        margin-left: -630px;
+        margin-top: 20px;
+    }
+    #option{
+        font-size: 16px;
+        font-weight: 400;
+        color: #095757;
+    }
+   section .opera{
+    display: flex;
+    justify-content: left;
+    align-items: left;   
+    text-align:left;
+    flex-direction: column;
+    padding: 30px 0;
+    margin: 0px;  
+    background: #fff;
+    margin-left: -90px;
+    margin-right: 10px;
+    border-top: 1px solid var(--blue-green-dark);
+    border-right: 1px solid var(--blue-green-dark);
+    border-bottom: 1px solid var(--blue-green-dark);
+    border-left: 1px solid var(--blue-green-dark);
+    border-radius: 23px;
+
+}
+section .btn-confirm{
     display: flex;
     align-items: center; 
     justify-content: center; 
-    margin-top: 2em;
-    margin-left: 13.5em;
-    width: 27%;
-    height: 50px;
-    background: #000;
-    color: #000;
-    
-    font-size: 20px;
-    font-weight: 18.75em;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: .5s ease all;
-    border-radius: 5px;
-    position: relative; 
-    overflow: hidden; 
-    background-color: #f0c44e;
-    
-}
+    margin-left: -200px;
+    position: absolute;
+    margin-top: 320px;
+    width: 50%;
 
+}
 }
 @media screen and (max-width: 536px){
-    
-    section{
-        flex-direction: column;
-    }
-    header .navar a{
-        flex-direction: column;
+    .opera-master{
+        margin-left: -500px;
     }
     
-    header .navar{
-        margin-top: 20px;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        margin-right: -80px;
-        margin-left: 50px;
-    }
+}
 
-    section .btn{
-        margin-left: 50%;
-    }
-    section .btn{
-        margin-left: 50%;
-    }
-    section .btn{
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 2em;
-        margin-left: 200px;
-        width: 27%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
-    }
-   }
+@media screen and (max-width: 474px){
+
+
+}
+
+
+@media screen and (max-width: 1220px){
+
+
+}
+
+

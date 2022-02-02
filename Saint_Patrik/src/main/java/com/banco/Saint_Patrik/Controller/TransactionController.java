@@ -19,9 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@PreAuthorize("hasAnyRole('ROLE_USUARIO','ROLE_CLIENTE')")
 @Controller
-@RequestMapping("/transactions")
+@RequestMapping("/")
 public class TransactionController {
 
     @Autowired
@@ -32,11 +31,34 @@ public class TransactionController {
 
     @Autowired
     private TransactionService transactionService;
+
+    
     
     @GetMapping("/transactions")
-    public String goTransactions(){
-        return "transaction.html";
+    public String goTransactions(HttpSession session, ModelMap model,
+            //@PathVariable String idUser,
+            RedirectAttributes redirectAttributes)throws ServiceError {
+         try {
+            Card login = (Card) session.getAttribute("cardSession");
+            if (login == null) {
+                return "redirect:/login";
+            }
+            
+            
+            String idUser = login.getUser().getId();
+
+            List<Transaction> listTransaction =  cardService.searchAllTransactions(login.getId());
+            model.addAttribute("last30Days", listTransaction);
+//             transactionService.searchTransactionByLast30Days(idUser);
+            return "transaction.html";
+        } catch (ServiceError e) {
+            System.out.println(e.getMessage());
+            redirectAttributes.addFlashAttribute("error", "THERE WAS AN ERROR DISPLAYING TRANSACTIONS FOR THE LAST 30 DAYS");
+            return "redirect:/";
+        }
+       
     }
+    
     /**
      * MÉTODO PARA REALIZAR UNA TRANSACCIÓN
      *
@@ -48,15 +70,17 @@ public class TransactionController {
      * @throws ServiceError
      */
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
-    @GetMapping("/newTransaction")
-    public String newTransaction(ModelMap model, RedirectAttributes redirectAttributes) throws ServiceError {
-
+    @GetMapping("/transactions/new")
+    public String newTransaction(HttpSession session, ModelMap model, RedirectAttributes redirectAttributes) throws ServiceError {
+        Card login = (Card) session.getAttribute("cardSession");
+        if (login == null) {
+            return "redirect:/login";
+        }
         List<User> userList = userService.userListEnabled();
         model.addAttribute("userAlta", userList);
-
         List<Card> cardList = cardService.cardListEnabled();
         model.addAttribute("userAlta", cardList);
-        return "redirect:/newTransaction";
+        return "transfer.html";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
@@ -110,16 +134,17 @@ public class TransactionController {
             //@PathVariable String idUser,
             RedirectAttributes redirectAttributes) throws ServiceError {
         try {
-            User login = (User) session.getAttribute("cardSession");
+            Card login = (Card) session.getAttribute("cardSession");
             if (login == null) {
                 return "redirect:/login";
             }
-
-            String idUser = login.getId();
+            
+            
+            String idUser = login.getUser().getId();
 
             List<Transaction> listTransaction = transactionService.searchTransactionByLast30Days(idUser);
             model.addAttribute("last30Days", listTransaction);
-            return "redirect:/transactionByLast30Days";
+            return "index.html";
         } catch (ServiceError e) {
             System.out.println(e.getMessage());
             redirectAttributes.addFlashAttribute("error", "THERE WAS AN ERROR DISPLAYING TRANSACTIONS FOR THE LAST 30 DAYS");

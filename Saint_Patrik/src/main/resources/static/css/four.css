@@ -8,7 +8,7 @@
 	top: 50%;
 	left: 50%;
 	transition: .5s ease-in-out all;
-    border-radius: 1000px;
+        border-radius: 1000px;
 	transform-origin: center;
 }
 
@@ -17,7 +17,7 @@
 	background: rgba(163, 122, 9, 0.795);
 }
 
- /* To remove the underline from links*/
+/* To remove the underline from links*/
 /* Para quitarle el subrayado a los enlaces*/
 a:link, a:visited,  a:hover, a:active
 {

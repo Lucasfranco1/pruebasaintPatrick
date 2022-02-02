@@ -1,5 +1,6 @@
 
 
+
 :root{
     --yellow: #f0c44e;
     --blue-green-dark: #095757;
@@ -8,11 +9,11 @@
     --light-blue:#78b4b6;
 }
 
-
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;   
+    outline: none;
 }
 
 body{
@@ -23,7 +24,7 @@ body{
 .container{
     width: 95%;
     margin: auto;
-   
+
 }
 
 
@@ -31,7 +32,7 @@ body{
 header{
     padding: 30px 0;
     background: var(--nav);
-    
+
 }
 
 
@@ -42,11 +43,11 @@ header .container{
 }
 header .container img{
     margin-left: 3.33em;
-	width: 50px;
-	height: 50px;
+    width: 50px;
+    height: 50px;
     margin-top: 5px;
     display: flex; 
-	justify-content: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
 
 }
@@ -56,7 +57,7 @@ header .container h2{
 }
 
 header .logo{
-    /* Para quitarle las negritas usamos un font-weight normal */
+
     font-weight: normal; 
     color: #000;
     font-size: 40px;
@@ -69,20 +70,21 @@ header .navar a{
 }
 
 header .navar a{    
-    
+
 
     font-size: 20px;
     margin-right: 75px;
     margin-left: -50px;    
     color: #aaa;
+
     text-decoration: none;   
-    
+
 }
 
 
 header nav a:hover,
 header nav a.active{
-    
+
     color:#000;    
     background-color: #f0c44e;
 }
@@ -103,7 +105,7 @@ main{
     border-bottom: 2px solid var(--blue-green-dark);
     border-left: 2px solid var(--blue-green-dark);
     border-radius: 23px;
-    
+
 }
 
 
@@ -121,7 +123,7 @@ main .balance{
     font-weight: 400;
     font-size: 50px;
     color: var(--blue-green-dark);
-   
+
 }
 .balance h2 span{
     font-size: 30px;
@@ -132,60 +134,107 @@ main .balance{
 
 
 
-.section{
+section{
     width: 90%;
     margin: auto;
 }
 
-section .operation{
-    padding: 30px 0px;
-    margin: 0px;
+
+
+
+section .opera{
+
+    padding: 30px 0px 30px;
+    margin: 30px;
     background: #fff;
-    width: 92%;
-    margin-left: 30px;
+    width: 90%;
+    margin-left: 60px;
     margin-right: 10px;
-    border-top: 1px solid rgb(207, 202, 202);
-    border-right: 1px solid rgb(207, 202, 202);
-    border-bottom: 1px solid rgb(207, 202, 202);
-    border-left: 1px solid rgb(207, 202, 202);
+    border-top: 1px solid var(--blue-green-dark);
+    border-right: 1px solid var(--blue-green-dark);
+    border-bottom: 1px solid var(--blue-green-dark);
+    border-left: 1px solid var(--blue-green-dark);
     border-radius: 23px;
-    
+
 }
 
-.operation h3{
+
+
+.operation-style .table{
+    display: block;    
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.operation-style:hover .table,
+.operation-style .table.show{
+
+    max-height: 400px;    
+    overflow: hidden;
+    transition: all 0.5s;
+
+}
+
+
+.opera{ 
+    display: flex;    
+    justify-content: space-around;
+    font-size: 20px;
+
+
+
+}
+
+
+
+
+.table #type{    
+    font-size: 25px;
+    line-height: 2;
+    width: 100px;
+    font-weight: 300;
+    margin-left: -100px;
+
+}
+.table #date{
+    font-size: 25px;
+    width: 200px;
+    line-height: 2;
+    letter-spacing: 0.1cm;    
+    font-weight: 100;
+}
+
+.table #amount{
+
+    font-size: 25px;
+    line-height: 2;
+    font-weight: 400;
+
+
+}
+.table #amount #span-amount{
+    font-size: 10px;
+}
+
+
+.opera h3{
     text-align: center;
     display: flex;
     justify-content: center;
     margin-left: 60px;
     font-weight: 500;
     font-size: 30px;
-}
-.operation .recent-Operations{
-    display: flex;
-    justify-content: space-around;
+
 }
 
-.recent-Operations h2{
-    text-align: center;
-    font-size: 18px;    
-    font-weight: 400;
-    color: #000;
+section h3{
+    padding: -10px;
+    margin: 14px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #095757;
 }
-
-.recent-Operations h4{
-    
-    text-align: center;
-    font-size: 18px;    
-    font-weight: 400;
-    color: #000;
-}
-.recent-Operations h5{
-    text-align: center;
-    font-size: 16px;    
-    font-weight: 400;
-    color: #000;
-}
-
 
 /* Btn */
 
@@ -198,41 +247,43 @@ section .btn{
     cursor: pointer;
     background: #f0c44e;
     border: none;
-    
+
 }
 
 section .btn:hover{
     color: var(--blue-green-dark);
     filter: drop-shadow(0 0 5px var(--yellow)) drop-shadow(0 0 15px var(--yellow));
 }
-section .btn ico-icon{
-    --ionicon-stroke-width: 50px;
+.btn.act{
+    color: #fff;
 
 }
-
+.btn-special{
+    margin-left: -2.5em;
+}
 section .btn-t {
     display: flex;
-	align-items: center; 
+    align-items: center; 
     justify-content: center;  
-    
-	margin-top: 1em;
-    margin-left: 30.5em; 
-	width: 20%;
-	height: 50px;
-	background: #000;
-	color: #000;
-	
-	font-size: 20px;
-	font-weight: 18.75em;
-	border: none;
-	cursor: pointer;
-	text-transform: uppercase;
-        transition: .5s ease all;
-	border-radius: 5px;
-	position: relative; 
-	overflow: hidden; 
-	background-color: #f0c44e;
-    
+
+    margin-top: 1em;
+    margin-left: 28.5em; 
+    width: 20%;
+    height: 50px;
+    background: #000;
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 18.75em;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .5s ease all;
+    border-radius: 5px;
+    position: relative; 
+    overflow: hidden; 
+    background-color: #f0c44e;
+
 }
 
 section .btn-t:hover{
@@ -243,12 +294,12 @@ section .btn-t:hover{
 /* Footer */
 
 footer{
-    
+
     padding: 30px 0;
     background: var(--yellow);
-    
-   
-	
+
+
+
 }
 
 
@@ -258,8 +309,8 @@ footer{
     justify-content: center;
     font-size: 12px;
     font-weight: normal;
-    
-    
+
+
 
 }
 
@@ -272,6 +323,10 @@ footer{
 
 
 /* Media Queries */
+
+
+
+
 @media screen and (max-width: 1420px){
     header .logo{
         margin-bottom: 10px;
@@ -281,11 +336,11 @@ footer{
     header .container {
         flex-direction: column;
         text-align: center;
-       
+
     }
     header .container h2{
         margin-top:15px;
-        margin-right: -25px;
+        margin-right: 5px;
         font-weight:700;
     }
     header .navar{
@@ -306,12 +361,12 @@ footer{
         align-items: center; 
         justify-content: center; 
         margin-top: 1em;
-        margin-left: 28.5em;
+        margin-left: 26.5em;
         width: 20%;
         height: 50px;
         background: #000;
         color: #000;
-        
+
         font-size: 20px;
         font-weight: 18.75em;
         border: none;
@@ -322,50 +377,45 @@ footer{
         position: relative; 
         overflow: hidden; 
         background-color: #f0c44e;
-        
-    }
-    
-    footer .footer_logo .copy{
-        margin-top: 10px;
-        text-align: initial;   
-        font-weight: 100;
-        margin-left: 50px;
-        font-size: 12px;
-    
+
     }
 
-    /* footer img{
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        margin-left: 690px;
-    } */
-    
-    
-   
+
+
+
+
 }
+@media screen and (max-width: 1220px){
+    section .btn-special{
+        margin-left: -120px;
+    }
 
+}
 @media screen and (max-width: 900px){
+
+    header .container h2{
+        font-size: 0;
+    }
+
     section .btn{
         margin-left: 50%;
     }
     footer .footer_logo .copy{
-       
-        margin-top: -10px;
-        text-align: initial;   
-        font-weight: 400;
-        margin-left: -760px;
-        font-size: 18px;
-    
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 20px;
+        font-size: 12px;
+
     }
     section .btn-t {
         margin-top: 50px;
-        margin-right: 0px;        
-        
+        margin-right: -200px;        
+
         height: 50px;
         background: #000;
         color: #000;
-        
+
         font-size: 20px;
         /* font-weight: s.75em; */
         border: none;
@@ -376,23 +426,78 @@ footer{
         position: relative; 
         overflow: hidden; 
         background-color: #f0c44e;
-        
+
+    }
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding:1rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+    section .btn-special{
+        margin-left: -160px;
+        font-size: 14px;
+
     }
 
 }
+@media screen and (max-width: 854px){
 
-@media screen and (max-width: 861px){
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 600px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
+    }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:0; right:0px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+    section .btn-special{
+        margin-left: -90px;
+        font-size: 14px;
+
+    }
+
     section .btn{
         margin-left: 50%;
     }
     section .btn-t {        
         margin-top: 1em;
-        margin-left: -700px;
+        margin-left: -900px;
         width: 30%;
         height: 50px;
         background: #000;
         color: #000;
-        
+
         font-size: 20px;
         font-weight: 18.75em;
         border: none;
@@ -403,35 +508,82 @@ footer{
         position: relative; 
         overflow: hidden; 
         background-color: #f0c44e;
-        
+
+    }
+
+    section .btn-special{
+        margin-left: 250px;
+    }
+
+
+    section .btn-special .btn-t{
+        font-size: 15px;
+    }
+
+    footer .footer_logo .copy{
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 20px;
+        font-size: 12px;
+
+    }
+    .super-container{
+        min-height: calc(100vh - 205px);
     }
 }
+@media screen and (max-width: 861px){
 
-@media screen and (max-width: 630px){
-    
-    header .navar{
-        margin-top: 20px;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        margin-right: -80px;
-        margin-left: 50px;
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 600px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
     }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:0; right:0px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+    section .btn-special{
+        margin-left: -90px;
+        font-size: 14px;
+
+    }
+
     section .btn{
         margin-left: 50%;
     }
-    section .btn-t {
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
+    section .btn-t {        
         margin-top: 1em;
-        margin-left: auto;
-        width: 20%;
+        margin-left: -900px;
+        width: 30%;
         height: 50px;
         background: #000;
         color: #000;
-        
+
         font-size: 20px;
         font-weight: 18.75em;
         border: none;
@@ -442,33 +594,172 @@ footer{
         position: relative; 
         overflow: hidden; 
         background-color: #f0c44e;
-        
+
     }
-   }
-@media screen and (max-width: 751px){
- section .btn{
-    margin-left: 50%;
-     
+
+    section .btn-special{
+        margin-left: 250px;
     }
- main .balance{
-     flex-direction: column;
- }
- section .operation h3{
-     margin-right: 60px;
-     flex-direction: column;
- }
+
+
+    section .btn-special .btn-t{
+        font-size: 15px;
+    }
+
+    footer .footer_logo .copy{
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 20px;
+        font-size: 12px;
+
+    }
+}
+@media screen and (max-width: 630px){
+
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 500px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
+    }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:0; right:0px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+
+    section  {
+        margin-left: -50px;
+
+    }
+    section .title-section {
+        margin-left: 50px;
+
+    }
+
+    section .btn-button{
+        margin-left: 140px;
+    }
+    section .btn-special{
+        margin-left: 30px;
+        font-size: 12px;
+        width: 400px;
+
+    }
+    section .btn-special .btn-t{
+        font-size: 14px;
+    }
+
+    section .title-h3{
+        margin-left: 160px;
+    }
+
+    section .opera{
+        margin-left: 110px;
+    }
+
+    footer .footer_logo .copy{
+
+        margin-top: 0;                  
+        margin-left: 40px;
+        font-size: 12px;
+
+    }
 
 }
-@media screen and (max-width: 536px){
+@media screen and (max-width: 751px){
+    section .btn{
+        margin-left: 50%;
+
+    }
     main .balance{
         flex-direction: column;
     }
+    section .opera h3{
+        margin-right: 60px;
+        flex-direction: column;
+    }    
+    section .btn-special{
+        margin-left: 100px;
+    }
+
+
+    section .btn-special .btn-t{
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 536px){
+
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 400px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
+    }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:40; right:80px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+
+    main .balance{
+        flex-direction: column;
+        font-size: 18px;
+    }
     main .balance h2{
         margin-left: 30px;
+        font-size: 16px;
     }
     main .balance h2 span{
-       margin: auto;
-       margin-left: 60px;
+        margin: auto;
+        margin-left: 0px;
+        font-size: 12px;
     }
     section{
         flex-direction: column;
@@ -476,7 +767,7 @@ footer{
     header .navar a{
         flex-direction: column;
     }
-    
+
     header .navar{
         margin-top: 20px;
         flex-direction: column;
@@ -490,58 +781,293 @@ footer{
     section .btn{
         margin-left: 50%;
     }
-   }
-   @media screen and (max-width: 1220px){
-    section .btn-t {
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 1em;
-        margin-left: 25.5em;
-        width: 20%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
-    }
+    section .btn-special{
+        margin-left: -40px;
+        font-size: 14px;
+        width: 400px;
 
-   }
-   @media screen and (max-width: 1175px){
-    section .btn-t {
-        display: flex;
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 1em;
-        margin-left: 23.5em;
-        width: 20%;
-        height: 50px;
-        background: #000;
-        color: #000;
-        
-        font-size: 20px;
-        font-weight: 18.75em;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .5s ease all;
-        border-radius: 5px;
-        position: relative; 
-        overflow: hidden; 
-        background-color: #f0c44e;
-        
+    }
+    section .btn-special .btn-t{
+        font-size: 12px;
+    }
+    footer .footer_logo .copy{
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 40px;
+        font-size: 12px;
+
     }
 }
+@media screen and (max-width: 474px){
+
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 250px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
+    }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:40; right:80px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+
+    main .balance{
+        flex-direction: column;
+        font-size: 18px;
+    }
+    main .balance h2{
+        margin-left: 30px;
+        font-size: 16px;
+    }
+    main .balance h2 span{
+        margin: auto;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    .table #type{    
+        font-size: 15px;
+        line-height: 2;
+        width: 50px;
+        font-weight: 300;
+        margin-left: -100px;
+
+    }
+    .table #date{
+        font-size: 12px;
+        width: 100px;
+        line-height: 2;
+        letter-spacing: 0.1cm;    
+        font-weight: 100;
+    }
+
+    .table #amount{
+
+        font-size: 15px;
+        line-height: 2;
+        font-weight: 400;
+
+
+    }
+    .table #amount #span-amount{
+        font-size: 8px;
+    }
+
+    section{
+        flex-direction: column;
+    }
+    section  {
+        margin-left: -50px;
+
+    }
+    section .title-section {
+        margin-left: 50px;
+
+    }
+
+    section .btn-button{
+        margin-left: 120px;
+    }
+    section .btn-special{
+        left: 90px;
+        font-size: 12px;
+        width: 400px;
+
+    }
+    section .btn-special .btn-t{
+        font-size: 14px;
+    }
+
+    section .title-h3{
+        margin-left: 140px;
+
+    }
+    section .title-h3 h3{
+        font-size: 10px;
+    }
+
+    section .opera{
+        margin-left: 90px;
+    }
+
+
+    section .btn{
+        margin-left: 50%;
+    }
+    section .btn-special{
+        margin-left: -240px;
+        font-size: 14px;
+
+    }
+    footer .footer_logo .copy{
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 20px;
+        font-size: 12px;
+
+    }
+}
+@media screen and (max-width: 374px){
+
+    header .icons #menu-bars{
+        display: inline-block;
+        margin-left: 250px;
+        background: #095757;
+        margin-top: -300px;
+        border-radius: 100%;
+
+    }
+
+
+
+    header .navar{
+        position: absolute;
+        top:60px; left:40; right:80px;
+        background:#095757;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 150% 0, 50% 0, 0 0);
+    }
+
+    header .navar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navar a{
+        display: block;
+        padding:1.5rem;
+        margin:1.5rem;
+        font-size: 2rem;
+        background:#eee;
+    }
+
+
+    main .balance{
+        flex-direction: column;
+        font-size: 18px;
+    }
+    main .balance h2{
+        margin-left: 30px;
+        font-size: 16px;
+    }
+    main .balance h2 span{
+        margin: auto;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    .table #type{    
+        font-size: 15px;
+        line-height: 2;
+        width: 50px;
+        font-weight: 300;
+        margin-left: -100px;
+
+    }
+    .table #date{
+        font-size: 12px;
+        width: 100px;
+        line-height: 2;
+        letter-spacing: 0.1cm;    
+        font-weight: 100;
+    }
+
+    .table #amount{
+
+        font-size: 15px;
+        line-height: 2;
+        font-weight: 400;
+
+
+    }
+    .table #amount #span-amount{
+        font-size: 8px;
+    }
+
+    section{
+        flex-direction: column;
+    }
+    section  {
+        margin-left: -50px;
+
+    }
+    section .title-section {
+        margin-left: 50px;
+
+    }
+
+    section .btn-button{
+        margin-left: 90px;
+    }
+    section .btn-special{
+        left: 90px;
+        font-size: 12px;
+        width: 400px;
+
+    }
+    section .btn-special .btn-t{
+        font-size: 14px;
+    }
+
+    section .title-h3{
+        margin-left: 90px;
+        font-size: 10px;
+
+    }
+    section .title-h3 h3{
+        font-size: 10px;
+        text-align: center;
+
+    }
+
+    section .opera{
+        margin-left: 80px;
+    }
+
+
+    section .btn{
+        margin-left: 50%;
+    }
+    section .btn-special{
+        margin-left: -80px;
+        font-size: 14px;
+
+    }
+    footer .footer_logo .copy{
+
+        margin-top: 0;
+        text-align: initial;           
+        margin-left: 20px;
+        font-size: 12px;
+
+    }
+}
+
+
 @media screen and (max-width: 1080px){
     section .btn-t {
         display: flex;
@@ -553,7 +1079,7 @@ footer{
         height: 50px;
         background: #000;
         color: #000;
-        
+
         font-size: 20px;
         font-weight: 18.75em;
         border: none;
@@ -564,6 +1090,39 @@ footer{
         position: relative; 
         overflow: hidden; 
         background-color: #f0c44e;
-        
+
     }
 }
+@media screen and (max-width: 1175px){
+    section .btn-t {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        margin-top: 1em;
+        margin-left: 23.5em;
+        width: 20%;
+        height: 50px;
+        background: #000;
+        color: #000;
+
+        font-size: 20px;
+        font-weight: 18.75em;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: .5s ease all;
+        border-radius: 5px;
+        position: relative; 
+        overflow: hidden; 
+        background-color: #f0c44e;
+
+    }
+}
+
+
+
+
+
+
+
+
