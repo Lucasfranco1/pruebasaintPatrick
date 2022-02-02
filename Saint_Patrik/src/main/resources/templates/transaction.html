@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"></head>
+<body>
+    <!-- HEADER -->
+  
+     <header th:replace="/fragments/header :: header"></header>
+    <br>
+    <br>
+    <!-- MAIN -->
+    <div class="super-container">     
+     
+         <br>
+         <section>        
+                 <div class="operation">
+                 <h3>Transactions History</h3>
+                 <br>
+                 <div class="recent-Operations">                
+                         <h2>Name Operation 1</h2>                    
+                         <h4><span>-</span> 100.00</h4>
+                         <h5>21 set 2021</h5>
+                                                                                                         
+                 </div>
+                 <br>
+                 <div class="recent-Operations">                                
+                     <h2>Name Operation 2</h2>                    
+                     <h4><span>-</span> 150.00</h4>
+                     <h5>21 oct 2021</h5>                                                                                                     
+                 </div>   
+                 <br>
+                 <div class="recent-Operations">                                
+                     <h2>Name Operation 3</h2>                    
+                     <h4><span>-</span> 110.00</h4>
+                     <h5>11 dec 2021</h5>                                                                                                     
+                 </div>                                                                                                     
+                 </div>
+                 <button class="btn-t four"><span style="color:#000">New Transfer</span></button>
+     
+         
+         </section>
+        </div>
+         <br>
+         
+    </div>
+       
+    
+     <footer th:replace="/fragments/footer :: footer"></footer>
+   
+
+
+   <script th:replace="/fragments/script :: script"></script>
+</body>
+</html>
